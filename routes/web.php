@@ -21,11 +21,7 @@ use App\Http\Controllers\CommentController;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::middleware(['auth'])->controller(DashboardController::class)->prefix('dashboard')->group(function () {
-    Route::get('/', 'index')->name('dashboard.home');
-});
+})->name('home');
 
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
