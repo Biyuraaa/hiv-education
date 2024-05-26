@@ -10,7 +10,7 @@
 
         <ul class="sidebar-list">
           <li class="sidebar-list-item">
-            <a href="index.html">
+            <a href="{{route('dashboard')}}">
               <span class="material-icons-outlined">house</span> Home
             </a>
           </li>
@@ -18,6 +18,12 @@
             <a href="Penyebab.html">
               <span class="material-icons-outlined">medical_services</span>
               Penyebab
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="{{route('blogs.index')}}">
+              <span class="material-icons-outlined">medical_services</span>
+              Blog
             </a>
           </li>
           <li class="sidebar-list-item">

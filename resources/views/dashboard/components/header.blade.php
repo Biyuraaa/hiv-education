@@ -8,6 +8,8 @@
         <div class="header-right">
           <span class="material-icons-outlined">notifications</span>
           <span class="material-icons-outlined">email</span>
-          <span class="material-icons-outlined">account_circle</span>
+          <a href="{{route('profiles.index')}}">
+            <span class="material-icons-outlined">account_circle</span>
+          </a>
         </div>
       </header>

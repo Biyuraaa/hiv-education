@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,12 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->controller(DashboardController::class)->prefix('dashboard')->group(function () {
     Route::get('/', 'index')->name('dashboard.home');
+});
+
+Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('blogs', BlogController::class);
+    Route::resource('profiles', ProfileController::class);
 });
 
 Route::controller(PagesController::class)->group(function () {
