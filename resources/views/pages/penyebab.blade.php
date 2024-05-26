@@ -1,4 +1,4 @@
-@extends('template')
+@extends('layouts.template')
 @section('content')
 <div class="container-fluid bg-primary py-5 mb-5" style="background-image: url('{{ asset("assets/images/HIVV.jpg") }}'); background-size: cover; background-position: center;">
     <div class="container py-5">

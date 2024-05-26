@@ -6,6 +6,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () 
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('blogs', BlogController::class);
     Route::resource('profiles', ProfileController::class);
+    Route::resource('comments', CommentController::class);
 });
 
 Route::controller(PagesController::class)->group(function () {
@@ -37,6 +39,8 @@ Route::controller(PagesController::class)->group(function () {
     Route::get('/penyebab', 'penyebab')->name('penyebab');
     Route::get('/gejala', 'gejala')->name('gejala');
     Route::get('/pencegahan', 'pencegahan')->name('pencegahan');
+    Route::get('/blog', 'blog')->name('blog');
+    Route::get('/blog/{blog}', 'show')->name('blog.show')->middleware('auth');
 });
 
 Route::controller(UserController::class)->group(function () {

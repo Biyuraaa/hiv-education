@@ -20,7 +20,8 @@ class DashboardController extends Controller
             $recentBlogs = Blog::latest()->take(5)->get();
 
             return view('dashboard.index', compact('users', 'blogs', 'comments', 'recentBlogs'));
+        } else {
+            return view('welcome');
         }
-        return Auth::user()->role == 'admin' ? view('dashboard.index') : view('welcome');
     }
 }

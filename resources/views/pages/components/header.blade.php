@@ -11,6 +11,9 @@
                 <a href="{{route('penyebab')}}" class="nav-item nav-link ">Penyebab</a>
                 <a href="{{route('gejala')}}" class="nav-item nav-link">Gejala & Diagnosis</a>
                 <a href="{{route('pencegahan')}}" class="nav-item nav-link">Pencegahan</a>
+                @if (Auth::user())                    
+                <a href="{{route('blog')}}" class="nav-item nav-link">Blog</a>
+                @endif
                 @if (Auth::user())
                   <a href="{{route('doLogout')}}" class="nav-item nav-link">Logout</a>
                 @else

@@ -42,7 +42,7 @@
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="Penyebab.html">
+            <a href="{{route('doLogout')}}">
               <span class="material-icons-outlined">exit_to_app</span> Logout
             </a>
           </li>

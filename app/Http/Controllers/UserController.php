@@ -12,7 +12,7 @@ class UserController extends Controller
 
     public function login()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     public function doLogin(Request $request)
@@ -40,12 +40,12 @@ class UserController extends Controller
     public function doLogout()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect()->route('login');
     }
 
     public function register()
     {
-        return view('register');
+        return view('auth.register');
     }
 
     public function doRegister(Request $request)

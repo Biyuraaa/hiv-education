@@ -8,6 +8,7 @@ use App\Http\Requests\StoreBlogRequest;
 use App\Http\Requests\UpdateBlogRequest;
 use App\Models\User;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
@@ -56,7 +57,6 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         $comments = $blog->comments()->get();
-
         return view('dashboard.blogs.show', ['blog' => $blog, 'comments' => $comments]);
     }
 

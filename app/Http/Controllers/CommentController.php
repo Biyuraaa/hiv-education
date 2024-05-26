@@ -30,7 +30,10 @@ class CommentController extends Controller
      */
     public function store(StoreCommentRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+        Comment::create($validatedData);
+
+        return redirect()->back()->with('success', 'Comment created successfully');
     }
 
     /**
